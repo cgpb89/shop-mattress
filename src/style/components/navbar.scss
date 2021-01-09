@@ -1,0 +1,14 @@
+nav {
+  z-index: 10;
+
+  .navbar-brand {
+    max-width: 17.25rem;
+    padding: 0px !important;
+    height: 6rem;
+
+    .logo {
+      padding-top: 20px;
+      width: 6.25rem;
+    }
+  }
+}

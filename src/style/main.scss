@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import "./components//navbar";
+
+body{
+    height: 100vh;
+    font-family: 'Questrial', Helvetica, Arial, sans-serif;;
+    margin: 0;
+}
+
+button,
+input,
+textarea,
+header {
+    font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;;
+}
