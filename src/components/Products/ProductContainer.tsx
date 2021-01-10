@@ -24,10 +24,10 @@ class ProductContainer extends React.Component<ProductContainerProps, any> {
             <div>
                 <Container className="product-container">
                     <Row className="product">
-                        <div className="col-xs-12 col-sm-12 col-md-8 col-lg-8 image-container">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 image-container">
                              <img src={this.getImage(productSelected.get_ImageFileName())} alt={productSelected.get_Name()}/>
                         </div>
-                        <div className="col-xs-12 col-sm-12 col-md-4 col-lg-4 description-container">
+                        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-5 description-container">
                             <h3>Choose Your Mattress</h3>
                             <SelectProduct
                                 productSelected={productSelected}
