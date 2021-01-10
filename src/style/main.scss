@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import "./core/variables";
+@import "./core/mixin";
 @import "./components//navbar";
+@import "./components/product-container";
 
 body{
     height: 100vh;
@@ -8,9 +11,12 @@ body{
     margin: 0;
 }
 
-button,
-input,
-textarea,
-header {
-    font-family: 'Source Serif Pro', Helvetica, Arial, sans-serif;;
+h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h6,
+button, 
+span {
+    font-family: 'Questrial', sans-serif;
 }
