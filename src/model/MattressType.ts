@@ -6,12 +6,6 @@ export const typeOfMattresses = {
     "zen": "zen",
 }
 
-export const typeOfMattressesArray = 
-[
-    typeOfMattresses.classic, 
-    typeOfMattresses.loom, 
-    typeOfMattresses.zen];
-
 class MattressType {
     private mattress: Mattress;
     private type: string;

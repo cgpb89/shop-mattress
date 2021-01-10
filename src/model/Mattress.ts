@@ -14,10 +14,10 @@ class Mattress {
     private imageFileName: string;
 
     public constructor() {
-        this.name        = "";
-        this.price       = 0;
-        this.reviewRating  = 0;
-        this.imageFileName    = "";
+        this.imageFileName  = "";
+        this.name           = "";
+        this.price          = 0;
+        this.reviewRating   = 0;
     }
 
     public get_Name(): string {

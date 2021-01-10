@@ -5,10 +5,10 @@ import formatCurrency from "../../utils/utils";
 import RatingStart from '../Global/RatingStart';
 
 interface SelectProductProps {
-    productList: MattressType[],
-    selectedProduct: (value: Mattress) => void,
-    productSelected: Mattress,
     addItemToCart: (value: Mattress) => void,
+    productList: MattressType[],
+    productSelected: Mattress,
+    selectedProduct: (value: Mattress) => void,
 }
 
 export default class SelectProduct extends Component<SelectProductProps, any> {
@@ -30,7 +30,6 @@ export default class SelectProduct extends Component<SelectProductProps, any> {
                     )
                 })}
             </div>);
-
     }
 
     render() {
