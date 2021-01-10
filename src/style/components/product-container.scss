@@ -10,41 +10,46 @@
   height: 50%;
 
   .image-container {
-    padding: 30px 55px 60px;
+    margin: auto 0;
+    padding: 30px 55px;
     text-align: center;
 
+    @include respond(xs) {
+      padding: 30px 20px;
+    }
+  
+    @include respond(sm) {
+      padding: 30px 20px;
+    }
+
     img {
-      height: 350px;
+      background-size: cover;
+      height: auto;
       width: 100%;
     }
   }
 
   .description-container {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 20px 50px 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     @include respond(xs) {
-      margin: 10px 20px;
-      padding: 0;
+      display: flex;
+      flex-direction: column;
     }
   
     @include respond(sm) {
-      margin: 10px 20px;
-      padding: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     h3 {
       color: $octonary-color;
       font-family: "Source Sans Pro", sans-serif;
-      margin-bottom: 60px;
+      margin-bottom: 20px;
 
-      @include respond(xs) {
-        margin-bottom: 20px;
-      }
-    
-      @include respond(sm) {
-        margin-bottom: 20px;
+      @include respond(lg) {
+        margin-bottom: 60px;
       }
     }
 
@@ -79,15 +84,16 @@
     }
 
     .btn-group {
-      display: flex;
-      flex-direction: column;
+      width: 100%;
+  
+      @include respond(xs) {
+        display: flex;
+        flex-direction: column;
+      }
 
-      // @include respond(xs) {
-      //   margin-right: 20px;
-      // }
-    
-      @include respond(sm) {
-        margin-right: 20px;
+      @include respond(md) {
+        display: flex;
+        flex-direction: column;
       }
     }
 
