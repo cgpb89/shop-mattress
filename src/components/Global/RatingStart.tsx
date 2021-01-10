@@ -4,9 +4,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 interface RatingStartProps {
     edit?: boolean,
+    label?: string,
     size: number,
     value: number,
-    label?: string,
 }
 
 export default class RatingStart extends Component<RatingStartProps, any> {

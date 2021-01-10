@@ -98,10 +98,10 @@
     }
 
     button {
-      color: $secondary-color;
       background-color: $primary-color;
-      border: 1px solid $quinary-color;
       border-radius: 0;
+      border: 1px solid $quinary-color;
+      color: $secondary-color;
       font-family: "Questrial", sans-serif;
 
       &:active,

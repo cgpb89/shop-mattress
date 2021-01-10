@@ -6,10 +6,10 @@ import GlobalModal from '../Global/GlobalModal';
 import SelectProduct from './SelectProduct';
 
 interface ProductContainerProps {
-    productList: MattressType[],
-    selectedProduct: (value: Mattress) => void,
-    productSelected: Mattress,
     addItemToCart: (value: Mattress) => void,
+    productList: MattressType[],
+    productSelected: Mattress,
+    selectedProduct: (value: Mattress) => void,
 }
 
 class ProductContainer extends React.Component<ProductContainerProps, any> {
@@ -65,6 +65,7 @@ class ProductContainer extends React.Component<ProductContainerProps, any> {
                     isOpen={this.state.isOpen}
                     toggle={this.toggle}
                     content={this.modalContent()}
+                    size={"xl"}
                 />
             </div>
         )

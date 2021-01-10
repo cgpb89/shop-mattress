@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../logo.png";
-import { Cart } from "../../App";
+import { CartItem } from "../../App";
 import GlobalModal from "../Global/GlobalModal";
+import CartDetails from "./CartDetails";
+import Mattress from "../../model/Mattress";
 
 interface NavbarProps {
-    cartItems: Cart[]
+    cartItems: CartItem[],
+    checkoutOrder: () => void
+    isCheckout: boolean,
+    removeItemFromCart: (value: Mattress) => void;
 }
 
 export default class Navbar extends Component<NavbarProps, any> {
@@ -23,7 +28,7 @@ export default class Navbar extends Component<NavbarProps, any> {
       }
 
     render() {
-        const { cartItems } = this.props;
+        const { cartItems, isCheckout, checkoutOrder, removeItemFromCart } = this.props;
         return (
             <nav className="navbar navbar-expand-lg sticky-top navbar-light">
                 <div className="container">
@@ -49,6 +54,14 @@ export default class Navbar extends Component<NavbarProps, any> {
                 <GlobalModal 
                     isOpen={this.state.isOpen}
                     toggle={this.toggle}
+                    size={"md"}
+                    content={
+                    <CartDetails 
+                    cartItems={cartItems}
+                    isCheckout={isCheckout}
+                    checkoutOrder={checkoutOrder}
+                    removeItemFromCart={removeItemFromCart}
+                    />}
                 />
             </nav>
         )

@@ -12,18 +12,24 @@ export interface CartItem {
   count: number
 }
 
-export interface Cart {
-  item: CartItem
-}
-
 class App extends Component<any, any> {
 
   constructor(props: any) {
     super(props);
     this.state = {
       productSelected: data[0].get_Mattress(),
-      cartItems: []
+      cartItems: [],
+      isCheckout: false, // In a real environment this cannot be here
     }
+  }
+
+  checkoutOrder = () => {
+    this.setState({isCheckout: true});
+  }
+
+  removeItemFromCart = (item: Mattress) => {
+    let cartItems = this.state.cartItems;
+    this.setState({cartItems : cartItems.filter((element: CartItem )=> element.product.get_Name() !== item.get_Name())});
   }
 
   addItemToCart = (item: Mattress) => {
@@ -41,7 +47,7 @@ class App extends Component<any, any> {
       cartItems.push({ product: item, count: 1 });
     }
 
-    this.setState({ cartItems });
+    this.setState({ cartItems, isCheckout: false });
   }
 
   selectedProduct = (product: Mattress) => {
@@ -62,6 +68,9 @@ class App extends Component<any, any> {
       <div>
         <Navbar
           cartItems={this.state.cartItems}
+          isCheckout={this.state.isCheckout}
+          checkoutOrder={this.checkoutOrder}
+          removeItemFromCart={this.removeItemFromCart}
         />
         <ProductContainer
           productSelected={this.state.productSelected}
