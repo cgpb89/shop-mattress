@@ -1,3 +1,10 @@
+# General actions
+
+* Click on mattress image
+* Click on cart
+You are able to see 3 types of mattresses(image, name, price, rating). They can be added to cart.
+In the cart, you can see you products, remove them or Checkout
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
