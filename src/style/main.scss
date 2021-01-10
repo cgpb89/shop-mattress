@@ -4,6 +4,8 @@
 @import "./core/mixin";
 @import "./components//navbar";
 @import "./components/product-container";
+@import "./components/modal";
+@import "./components/start-rating";
 
 body{
     height: 100vh;

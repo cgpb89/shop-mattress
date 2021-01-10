@@ -1,0 +1,14 @@
+.start-rating {
+    .start-number {
+        padding-right: 5px;
+    }
+
+    .start {
+        color: $secondary-color;
+
+        &.checked {
+            color: $cuaternary-color;
+        }
+    }
+
+}

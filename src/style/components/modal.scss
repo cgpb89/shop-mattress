@@ -1,0 +1,20 @@
+.modal-content {
+  font-family: "Questrial", sans-serif;
+
+  .modal-header,
+  .modal-body {
+    border-bottom: 0;
+    border-top: 0;
+  }
+
+  .modal-header {
+    background-color: $quaternary-color;        
+    color: $tertiary-color;
+    padding: 16px 16px 10px;
+
+  }
+
+  img {
+    width: 100%;
+  }
+}

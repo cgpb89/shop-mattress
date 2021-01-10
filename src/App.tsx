@@ -5,7 +5,7 @@ import ProductContainer from './components/Products/ProductContainer';
 import { ParseJson } from './utils/parseJson';
 import Mattress from './model/Mattress';
 
-const  data = new ParseJson().ParseJsonData();
+const data = new ParseJson().ParseJsonData();
 
 export interface CartItem {
   product: Mattress,
@@ -45,29 +45,29 @@ class App extends Component<any, any> {
   }
 
   selectedProduct = (product: Mattress) => {
-    this.setState({productSelected: product})
+    this.setState({ productSelected: product })
   }
 
-  render(){
+  render() {
 
-    if(data.length < 0) {
+    if (data.length < 0) {
       return (
-        <div>Loading...</div>
+        <div className="spinner-border mt-5 ml-5" role="status">
+          <span className="visually-hidden"></span>
+        </div>
       )
     }
 
-    console.log("cart", this.state.cartItems);
-
     return (
       <div>
-        <Navbar 
-        cartItems={this.state.cartItems}
+        <Navbar
+          cartItems={this.state.cartItems}
         />
-        <ProductContainer 
-        productSelected={this.state.productSelected}
-        selectedProduct={this.selectedProduct}
-        productList={data}
-        addItemToCart={this.addItemToCart}/>
+        <ProductContainer
+          productSelected={this.state.productSelected}
+          selectedProduct={this.selectedProduct}
+          productList={data}
+          addItemToCart={this.addItemToCart} />
       </div>
     );
   }
