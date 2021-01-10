@@ -3,12 +3,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../../logo.png";
 import { Cart } from "../../App";
+import GlobalModal from "../Global/GlobalModal";
 
 interface NavbarProps {
     cartItems: Cart[]
 }
 
 export default class Navbar extends Component<NavbarProps, any> {
+
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            isOpen: false
+        }
+      }
+
+      public toggle = () => {
+          this.setState({isOpen: !this.state.isOpen})
+      }
+
     render() {
         const { cartItems } = this.props;
         return (
@@ -19,7 +32,7 @@ export default class Navbar extends Component<NavbarProps, any> {
                         <div className="" id="navbarSupportedContent">
                             <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                                 <li className="nav-item shopping-cart">
-                                    <a className="nav-link" aria-current="page" href="/#">
+                                    <a onClick={()=> this.toggle()} className="nav-link" aria-current="page" href="/#">
                                         <FontAwesomeIcon className="shopping-cart-icon" icon={faShoppingCart} />
                                         {cartItems.length > 0 ?
                                             <span className="badge">
@@ -33,6 +46,10 @@ export default class Navbar extends Component<NavbarProps, any> {
                         </div>
                     </div>
                 </div>
+                <GlobalModal 
+                    isOpen={this.state.isOpen}
+                    toggle={this.toggle}
+                />
             </nav>
         )
     }
