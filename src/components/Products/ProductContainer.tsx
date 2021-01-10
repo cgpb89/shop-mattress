@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container, Row } from "reactstrap";
 import Mattress from '../../model/Mattress';
 import MattressType from '../../model/MattressType';
 import GlobalModal from '../Global/GlobalModal';
@@ -43,8 +42,8 @@ class ProductContainer extends React.Component<ProductContainerProps, any> {
 
         return (
             <div>
-                <Container className="product-container">
-                    <Row className="product">
+                <div className="container product-container">
+                    <div className="row product">
                         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-7 image-container">
                             <img onClick={() => this.toggle()} src={this.getImage(productSelected.get_ImageFileName())} alt={productSelected.get_Name()} />
                         </div>
@@ -57,8 +56,8 @@ class ProductContainer extends React.Component<ProductContainerProps, any> {
                                 addItemToCart={addItemToCart}
                             />
                         </div>
-                    </Row>
-                </Container>
+                    </div>
+                </div>
 
                 <GlobalModal
                     modalTitle={productSelected.get_Name()}
