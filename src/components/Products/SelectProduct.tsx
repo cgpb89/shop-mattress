@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Mattress from '../../model/Mattress'
 import MattressType from '../../model/MattressType'
 import formatCurrency from "../../utils/utils";
+import RatingStart from '../Global/RatingStart';
 
 interface SelectProductProps {
     productList: MattressType[],
@@ -42,12 +43,21 @@ export default class SelectProduct extends Component<SelectProductProps, any> {
                 </div>
                 {this.renderButtonGroup()}
                 <div className="product-details">
-                    <span>{productSelected.get_Name()}</span>
-                    <span>{formatCurrency(productSelected.get_Price())}</span>
+                    <div>
+                        <span>{productSelected.get_Name()}</span>
+                        <RatingStart
+                            label="Rating"
+                            size={30}
+                            value={productSelected.get_ReviewRating()}
+                         />
+                    </div>
+                    <div>
+                        <span>{formatCurrency(productSelected.get_Price())}</span>
+                    </div>
                 </div>
                 <div>
                     <button
-                    onClick={()=> addItemToCart(productSelected)}
+                        onClick={() => addItemToCart(productSelected)}
                         type="button"
                         className="btn btn-light add-to-cart-btn">
                         Add to Cart

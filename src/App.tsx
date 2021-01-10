@@ -58,8 +58,6 @@ class App extends Component<any, any> {
       )
     }
 
-    console.log("cart", this.state.cartItems);
-
     return (
       <div>
         <Navbar
